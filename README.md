@@ -11,3 +11,9 @@ Voici la liste des fonctionnalités prévues dans le projet.
 - [ ] Système anti-chavirement
 - [ ] Transmission d’informations
 - [ ] Transmission de l'heure
+
+## Membres du projet
+[Hugo Barral](https://github.com/arc-hugo)  
+[Thomas Hoger](https://github.com/HeineKayn)  
+[Clément Vigand](https://github.com/Clement-INS)
+[Viktor Adrian Mouton](https://github.com/ToTTToR)
