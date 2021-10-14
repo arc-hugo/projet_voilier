@@ -18,10 +18,30 @@ void init_zero(){
 	while(!GPIO_Read(GPIOC,7)){}
 	Timer_Base_Start(TIM2);
 }
+
+float result;
+void conversion_alpha_teta(){
+	float alpha = ((float)(TIM2->CNT)/4.0);
+	if (alpha < 45.0){
+		result = 0.0;
+	}
+	else {
+		result = (90.0/135.0)*(alpha-45.0);
+	}
+}
+
+void config_interrupt_teta(){
+	Timer_Base_Init(TIM3,14399,9999);
+	Timer_ActiveIT(TIM3, 2, conversion_alpha_teta);
+	Timer_Base_Start(TIM3);
+}
+
+
 int angle ;
 int main(void){
 	setup_encoder_interface();
 	init_zero();
+	config_interrupt_teta();
 	while(1)
 	{
 	  angle = TIM2->CNT;
