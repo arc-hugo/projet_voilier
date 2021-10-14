@@ -14,8 +14,7 @@ void setup_encoder_interface(){
 	Timer_Base_Start(TIM2);
 }
 
- 
 int main(void){
-
+	setup_encoder_interface();
 	while(1);
 }	
