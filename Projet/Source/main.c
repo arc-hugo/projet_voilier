@@ -18,11 +18,14 @@ void init_zero(){
 	while(!GPIO_Read(GPIOC,7)){}
 	Timer_Base_Start(TIM2);
 }
-
+int angle ;
 int main(void){
 	setup_encoder_interface();
 	init_zero();
-	while(1);
+	while(1)
+	{
+	  angle = TIM2->CNT;
+	}
 }
 
  
