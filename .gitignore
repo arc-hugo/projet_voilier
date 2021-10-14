@@ -58,3 +58,8 @@ RTE/
 *.uvguix.*
 *.lst
 *.scvd
+*.crf
+*.htm
+*.axm
+*.lnp
+*.dep
