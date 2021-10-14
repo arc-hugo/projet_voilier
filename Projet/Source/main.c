@@ -11,11 +11,15 @@ void setup_encoder_interface(){
 	TIM2->CCMR1 &= ~(0xf<<12); //Compte tous les fronts 
 	TIM2->CCMR1 |= 2; // T1FP1 mapped on TI1
 	TIM2->CCMR1 |= (2<<8); // T2FP2 mapped on TI2
-	Timer_Base_Start(TIM2);
 }
 
+void init_zero(){
+	GPIO_Init(GPIOC,7,In_PullUp);
+	while(!GPIO_Read(GPIOC,7)){}
+	Timer_Base_Start(TIM2);
+}
  
 int main(void){
-
+	init_zero();
 	while(1);
 }	
