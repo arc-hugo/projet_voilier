@@ -51,12 +51,12 @@ void init_pwm_moteur(){
 }
 
 int angle ;
-int main(void){
+int Run(void){
 	setup_encoder_interface();
 	init_zero();
 	init_pwm_moteur();
 	config_interrupt_teta();
-	
+
 	while(1)
 	{
 	  angle = TIM2->CNT;
