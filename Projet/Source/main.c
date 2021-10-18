@@ -20,28 +20,43 @@ void init_zero(){
 }
 
 float result;
+float pourcentage_PWM;
 void conversion_alpha_teta(){
 	float alpha = ((float)(TIM2->CNT)/4.0);
-	if (alpha < 45.0){
+	if (alpha < 45.0 || alpha > 315){
 		result = 0.0;
 	}
-	else {
+	else if (alpha <= 180){
 		result = (90.0/135.0)*(alpha-45.0);
 	}
+	else
+	{
+		result = (90.0/135.0)*(360-alpha-45.0);
+	}
+	pourcentage_PWM = (1.0/18.0)*result+5.0;
+	Timer_Set_Cycle_PWM(TIM3, 2, (char) pourcentage_PWM);
 }
 
 void config_interrupt_teta(){
-	Timer_Base_Init(TIM3,14399,9999);
-	Timer_ActiveIT(TIM3, 2, conversion_alpha_teta);
-	Timer_Base_Start(TIM3);
+	Timer_Base_Init(TIM1,4999,4319); //Periode timer1 = 2s
+	Timer_ActiveIT(TIM1, 2, conversion_alpha_teta);
+	Timer_Base_Start(TIM1);
 }
 
+void init_pwm_moteur(){
+	Timer_Base_Init(TIM3,1439,999); //Periode timer3 = 20ms
+	Timer_PWM(TIM3, 2); //Config PWM sur PA7
+	GPIO_Init(GPIOA,7, AltOut_Ppull_2MHZ);
+	Timer_Base_Start(TIM3);
+}
 
 int angle ;
 int main(void){
 	setup_encoder_interface();
 	init_zero();
+	init_pwm_moteur();
 	config_interrupt_teta();
+	
 	while(1)
 	{
 	  angle = TIM2->CNT;
