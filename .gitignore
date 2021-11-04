@@ -59,7 +59,10 @@ RTE/
 *.lst
 *.scvd
 *.crf
+
+
 Projet/Objects/*.htm
+Projet/Objects/*.crf
 *.axm
 *.lnp
 *.dep
