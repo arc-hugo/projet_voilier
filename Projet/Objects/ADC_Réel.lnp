@@ -1,5 +1,7 @@
 --cpu Cortex-M3
 ".\objects\main.o"
+".\objects\communication.o"
+".\objects\orientation.o"
 ".\objects\driver_gpio.o"
 ".\objects\driver_timer.o"
 ".\objects\driver_adc.o"

@@ -388,6 +388,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
             </File>
+            <File>
+              <FileName>Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Orientation.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -804,6 +814,16 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Orientation.c</FilePath>
             </File>
           </Files>
         </Group>
