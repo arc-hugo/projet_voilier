@@ -388,6 +388,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
             </File>
+            <File>
+              <FileName>Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Orientation.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -407,6 +417,11 @@
               <FileName>Driver_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -800,6 +815,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
             </File>
+            <File>
+              <FileName>Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Orientation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Orientation.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -819,6 +844,11 @@
               <FileName>Driver_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
             </File>
           </Files>
         </Group>
