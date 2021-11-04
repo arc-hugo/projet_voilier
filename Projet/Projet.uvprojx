@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source\Orientation.c</FilePath>
             </File>
+            <File>
+              <FileName>Voile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Voile.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -824,6 +829,11 @@
               <FileName>Orientation.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\Orientation.c</FilePath>
+            </File>
+            <File>
+              <FileName>Voile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Voile.c</FilePath>
             </File>
           </Files>
         </Group>

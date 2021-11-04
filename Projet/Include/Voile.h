@@ -2,16 +2,16 @@
 #define VOILE_H__
 #include "stm32f10x.h"
 
-void setup_encoder_interface();
+void setup_encoder_interface(void);
 
-void init_zero();
+void init_zero(void);
 
-void conversion_alpha_teta();
+void conversion_alpha_teta(void);
 
-void config_interrupt_teta();
+void config_interrupt_teta(void);
 
-void init_pwm_moteur();
+void init_pwm_moteur(void);
 
-int Run(void);
+void Voile_Init(void);
 
 #endif
