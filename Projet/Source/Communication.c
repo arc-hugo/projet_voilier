@@ -24,7 +24,11 @@ void IT_TX (void) {
 	
 }
 
+void IT_TC (void) {
+	
+}
+
 void Communication_Init(void) {
 	UART_Init(USART1);
-	UART_Set_Interrupt(USART1, 2, (*IT_TX), (*IT_RX));
+	UART_Set_Interrupt(USART1, 2, (*IT_TX), (*IT_TC), (*IT_RX));
 }

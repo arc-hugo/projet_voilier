@@ -4,6 +4,6 @@
 #include "stm32f10x.h"
 
 void UART_Init(USART_TypeDef * UART);
-void UART_Set_Interrupt(USART_TypeDef * UART, char Prio, void(*IT_TX )(void), void(*IT_RX )(void));
+void UART_Set_Interrupt(USART_TypeDef * UART, char Prio, void(*IT_TX )(void), void(*IT_TC )(void), void(*IT_RX )(void));
 
 #endif
