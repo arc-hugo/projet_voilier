@@ -403,6 +403,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source\Voile.c</FilePath>
             </File>
+            <File>
+              <FileName>Accelero.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Accelero.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -834,6 +839,11 @@
               <FileName>Voile.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\Voile.c</FilePath>
+            </File>
+            <File>
+              <FileName>Accelero.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Accelero.c</FilePath>
             </File>
           </Files>
         </Group>
