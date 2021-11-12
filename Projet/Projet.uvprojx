@@ -428,6 +428,11 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_SysTick.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -859,6 +864,11 @@
               <FileName>Driver_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_SysTick.c</FilePath>
             </File>
           </Files>
         </Group>

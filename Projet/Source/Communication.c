@@ -1,6 +1,7 @@
 #include "Driver_GPIO.h"
 #include "Driver_UART.h"
 #include "Driver_Timer.h"
+#include "Driver_SysTick.h"
 
 #include "Communication.h"
 
@@ -20,15 +21,23 @@ void IT_RX(void) {
 	Timer_Set_Cycle_PWM(TIM4, 1, rapport);
 }
 
-void IT_TX (void) {
+void IT_TX(void) {
+	char buffer[] = "Batterie = ..., Orient = ...";
+	char length = 28;
+	char RetourC = 0x0D ;
+	int i;
 	
-}
-
-void IT_TC (void) {
-	
+	for (i = 0; i < length; i++) {
+		USART1->DR = buffer[i];
+		while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
+		//while(((USART1->SR >> 7) & 1) != 0);
+	}
+	USART1->DR = RetourC ;
+	while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
 }
 
 void Communication_Init(void) {
 	UART_Init(USART1);
-	UART_Set_Interrupt(USART1, 2, (*IT_TX), (*IT_TC), (*IT_RX));
+	UART_Set_Receive(USART1, 1, (*IT_RX));
+	SysTick_Init(1000,3,(*IT_TX));
 }
