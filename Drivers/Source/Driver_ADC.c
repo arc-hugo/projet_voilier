@@ -1,4 +1,5 @@
 #include "Driver_ADC.h"
+#include "Driver_GPIO.h"
 
 void ADC_Init(ADC_TypeDef * ADC, char voie){
 	if(ADC==ADC1){
@@ -16,8 +17,15 @@ void ADC_Init(ADC_TypeDef * ADC, char voie){
 	}
 }
 
-int Start_Conv(ADC_TypeDef * ADC){
+float Start_Conv(ADC_TypeDef * ADC){
+	int res;
 	ADC->CR2 |= 1;
 	while(!(ADC->SR & 1<<1)){}
-	return ADC->DR & 0xFFFF;
+	res = ADC->DR & 0xFFF;
+	return (float)res/1241.0;
+}
+
+void Batterie_Init(){
+	GPIO_Init(GPIOB, 0, In_Analog);
+	ADC_Init(ADC1, 8);
 }

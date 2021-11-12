@@ -5,6 +5,7 @@
 
 //Initialise l'ADC
 void ADC_Init(ADC_TypeDef * ADC, char voie);
-int Start_Conv(ADC_TypeDef * ADC);
+float Start_Conv(ADC_TypeDef * ADC);
+void Batterie_Init(void);
 
 #endif
