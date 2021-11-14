@@ -14,7 +14,7 @@ void UART_Init(USART_TypeDef * UART) {
 		GPIO_Init(GPIOA, 9, AltOut_Ppull_2MHZ);
 	}
 	// Activation du UART (UE)
-	UART->CR1 |= (1 << 13);
+	UART->CR1 |= USART_CR1_UE;
 	
 	// On laisse M à 0 (8 bit)
 	// On laisse STOP à 00 (un seul bit de stop)
@@ -25,7 +25,7 @@ void UART_Init(USART_TypeDef * UART) {
 	UART->BRR |= (468 << 4) + 12;
 	
 	// Activation de la réception (RE) et de la transmission (TE)
-	UART->CR1 |= ((1 << 2)+(1 << 3));
+	UART->CR1 |= USART_CR1_RE+USART_CR1_TE;
 	
 }
 
@@ -34,15 +34,15 @@ void UART_Set_Receive(USART_TypeDef * UART, char Prio, void(*IT_RX )(void)) {
 		NVIC->ISER[1] |= 1 << 5;
 		NVIC->IP[37] = Prio << 4;
 		// RXNEIE (bit 5)
-		UART->CR1 |= (1 << 5);
+		UART->CR1 |= USART_CR1_RXNEIE;
 	}
 	UART_RX_Interrupt = IT_RX;
 }
 
 void USART1_IRQHandler(void) {
 	// Read data not empty (RXNE)
-	if (((USART1->SR >> 5) & 1) == 1) {
-		USART1->SR &= ~(1<<5);
+	if ((USART1->SR & USART_SR_RXNE) == USART_SR_RXNE) {
+		USART1->SR &= ~(USART_SR_RXNE);
 		if (UART_RX_Interrupt != 0) {
 			(* UART_RX_Interrupt)();
 		}

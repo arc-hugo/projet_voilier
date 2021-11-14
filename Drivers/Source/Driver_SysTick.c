@@ -9,10 +9,11 @@ void SysTick_Handler(void) {
 		delay--;
 	}
 	if (delay == 0 && SysTick_IT != 0) {
-		SysTick->CTRL &= ~(1);
+		// Déasactive momentanément SysTick
+		SysTick->CTRL &= ~(SysTick_CTRL_ENABLE);
 		(* SysTick_IT)();
 		delay = save;
-		SysTick->CTRL |= 1;
+		SysTick->CTRL |= SysTick_CTRL_ENABLE;
 	}
 }
 
