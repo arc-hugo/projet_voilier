@@ -1,3 +1,5 @@
+#include "stdio.h"
+
 #include "Driver_GPIO.h"
 #include "Driver_UART.h"
 #include "Driver_Timer.h"
@@ -22,18 +24,15 @@ void IT_RX(void) {
 }
 
 void IT_TX(void) {
-	char buffer[] = "Batterie=...,Orient=...\n";
+	char buffer[29];
 	char length = 28;
-	//char RetourC = 0x0D ;
 	int i;
+	sprintf(buffer,"Batterie = %3d, Orient = %3d%c",100,10,0xD);
 	
 	for (i = 0; i < length; i++) {
 		USART1->DR = buffer[i];
-		while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
-		//while(((USART1->SR >> 7) & 1) != 0);
+		while ((USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
 	}
-	//USART1->DR = RetourC ;
-	//while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
 }
 
 void Communication_Init(void) {
