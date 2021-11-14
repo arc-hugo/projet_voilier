@@ -22,9 +22,9 @@ void IT_RX(void) {
 }
 
 void IT_TX(void) {
-	char buffer[] = "Batterie = ..., Orient = ...";
+	char buffer[] = "Batterie=...,Orient=...\n";
 	char length = 28;
-	char RetourC = 0x0D ;
+	//char RetourC = 0x0D ;
 	int i;
 	
 	for (i = 0; i < length; i++) {
@@ -32,8 +32,8 @@ void IT_TX(void) {
 		while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
 		//while(((USART1->SR >> 7) & 1) != 0);
 	}
-	USART1->DR = RetourC ;
-	while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
+	//USART1->DR = RetourC ;
+	//while ( (USART1->SR & USART_SR_TXE) != USART_SR_TXE); 
 }
 
 void Communication_Init(void) {
