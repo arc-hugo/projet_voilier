@@ -16,9 +16,9 @@ void SysTick_Handler(void) {
 	}
 }
 
-// Delay in ms
-void SysTick_Init(unsigned int Tick, unsigned int Delay, void (*IT)(void)) {
-	SysTick_Config(Tick * 9000);
+// Divise le nombre de ticks nécessaires par 10*(Div+1) (ex: Div = 0 donne 0.1s)
+void SysTick_Init(unsigned int Div, unsigned int Delay, void (*IT)(void)) {
+	SysTick_Config(SystemCoreClock / (10*(Div+1)));
 	SysTick_IT = IT;
 	delay = Delay;
 	save = Delay;

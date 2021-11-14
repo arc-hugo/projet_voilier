@@ -39,5 +39,6 @@ void IT_TX(void) {
 void Communication_Init(void) {
 	UART_Init(USART1);
 	UART_Set_Receive(USART1, 1, (*IT_RX));
-	SysTick_Init(1000,3,(*IT_TX));
+	// Transmission toutes les 3 sec
+	SysTick_Init(0,30,(*IT_TX));
 }

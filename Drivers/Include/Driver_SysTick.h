@@ -4,6 +4,6 @@
 #include "stm32f10x.h"
 
 // Delay in ms
-void SysTick_Init(unsigned int Tick, unsigned int Delay, void (*IT)(void));
+void SysTick_Init(unsigned int Div, unsigned int Delay, void (*IT)(void));
 
 #endif
