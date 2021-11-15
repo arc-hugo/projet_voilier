@@ -12,11 +12,9 @@ void Config_Master_SPI(){
 
 int result;
 void Run(){
-	int poubelle;
 	Config_Master_SPI();
 	SPI1->DR = 0;
 	while ((SPI1->SR & 1)){} //Wait TX = 1 (indique que le registre du maitre est vide)
-	poubelle = SPI1->DR;
 	SPI1->DR = 1;
 	while ((SPI1->SR & 1)){}
 	result = SPI1->DR;

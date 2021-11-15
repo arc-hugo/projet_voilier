@@ -4,6 +4,8 @@
 #include "Driver_UART.h"
 #include "Driver_Timer.h"
 #include "Driver_SysTick.h"
+#include "Driver_ADC.h"
+#include "Voile.h"
 
 #include "Communication.h"
 
@@ -24,10 +26,12 @@ void IT_RX(void) {
 }
 
 void IT_TX(void) {
-	char buffer[29];
-	char length = 29;
-	int i;
-	sprintf(buffer,"Batterie = %3d, Orient = %3d%c",100,10,0xD);
+	uint8_t batterie = (uint8_t)(Start_Conv(ADC1) * 100);
+	uint8_t orient = (uint8_t) conversion_alpha_teta();
+	char buffer[30];
+	uint8_t length = 30;
+	uint8_t i;
+	sprintf(buffer,"Batterie = %3d%%, Orient = %3d%c",batterie,orient,0xD);
 	
 	for (i = 0; i < length; i++) {
 		USART1->DR = buffer[i];

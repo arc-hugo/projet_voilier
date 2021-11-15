@@ -17,15 +17,11 @@ void ADC_Init(ADC_TypeDef * ADC, char voie){
 	}
 }
 
+
 float Start_Conv(ADC_TypeDef * ADC){
-	int res;
+	float res;
 	ADC->CR2 |= 1;
 	while(!(ADC->SR & 1<<1)){}
 	res = ADC->DR & 0xFFF;
-	return (float)res/1241.0;
-}
-
-void Batterie_Init(){
-	GPIO_Init(GPIOB, 0, In_Analog);
-	ADC_Init(ADC1, 8);
+	return res/1241.0;
 }

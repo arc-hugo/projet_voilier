@@ -1,15 +1,13 @@
 #include "Voile.h"
 #include "Orientation.h"
 #include "Communication.h"
-#include "Accelero.h"
-#include "Driver_ADC.h"
-#include "Driver_GPIO.h"
+#include "Batterie.h"
 
 int main(void){
-	//Voile_Init();
+	Voile_Init();
+	Batterie_Init();
 	Orientation_Init();
 	Communication_Init();
-	
 
 	while(1);
 }	
