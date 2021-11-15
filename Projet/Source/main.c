@@ -6,9 +6,10 @@
 #include "Driver_GPIO.h"
 
 int main(void){
-	/*Voile_Init();
+	//Voile_Init();
 	Orientation_Init();
-	Communication_Init();*/
-	while(1){
-	}
+	Communication_Init();
+	
+
+	while(1);
 }	
