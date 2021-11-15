@@ -25,7 +25,7 @@ void IT_RX(void) {
 
 void IT_TX(void) {
 	char buffer[29];
-	char length = 28;
+	char length = 29;
 	int i;
 	sprintf(buffer,"Batterie = %3d, Orient = %3d%c",100,10,0xD);
 	

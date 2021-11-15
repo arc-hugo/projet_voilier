@@ -3,7 +3,7 @@
 #include "Communication.h"
 
 int main(void){
-	//Voile_Init();
+	Voile_Init();
 	Orientation_Init();
 	Communication_Init();
 	
