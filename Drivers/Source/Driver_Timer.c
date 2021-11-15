@@ -24,11 +24,11 @@ void Timer_Base_Init (TIM_TypeDef * Timer, unsigned short ARR, unsigned short PS
 }
 
 void Timer_Base_Start (TIM_TypeDef * Timer) {
-	Timer->CR1 |= 1;
+	Timer->CR1 |= TIM_CR1_CEN;
 }
 
 void Timer_Base_Stop (TIM_TypeDef * Timer) {
-	Timer->CR1 &= ~(1);
+	Timer->CR1 &= ~(TIM_CR1_CEN);
 }
 
 
