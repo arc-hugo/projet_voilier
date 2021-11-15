@@ -9,7 +9,7 @@ Voici la liste des fonctionnalités prévues dans le projet.
 - [x] Orientation du voilier
 ### Secondaires
 - [x] Système anti-chavirement
-- [ ] Transmission d’informations
+- [x] Transmission d’informations
 - [ ] Transmission de l'heure
 
 ## Membres du projet
