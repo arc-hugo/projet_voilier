@@ -5,10 +5,10 @@ Projet de programmation d'une carte NUCLEO-F103RB embarquée sur une maquette de
 ## Fonctionnalités
 Voici la liste des fonctionnalités prévues dans le projet.
 ### Principales
-- [ ] Bordage automatique
-- [ ] Orientation du voilier
+- [x] Bordage automatique
+- [x] Orientation du voilier
 ### Secondaires
-- [ ] Système anti-chavirement
+- [x] Système anti-chavirement
 - [ ] Transmission d’informations
 - [ ] Transmission de l'heure
 
