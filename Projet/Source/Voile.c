@@ -21,7 +21,7 @@ void init_zero(void){
 	Timer_Base_Start(TIM2);
 }
 
-void conversion_alpha_teta(void){
+float conversion_alpha_teta(void){
 	float result;
 	float pourcentage_PWM;
 	float alpha = ((float)(TIM2->CNT)/4.0);
@@ -38,11 +38,12 @@ void conversion_alpha_teta(void){
 	}
 	pourcentage_PWM = (1.0/18.0)*result+5.0;
 	Timer_Set_Cycle_PWM(TIM3, 2, (char) pourcentage_PWM);
+	return alpha;
 }
 
 void config_interrupt_teta(void){
 	Timer_Base_Init(TIM1,4999,4319); //Periode timer1 = 2s
-	Timer_ActiveIT(TIM1, 2, conversion_alpha_teta);
+	Timer_ActiveIT(TIM1, 2, (void (*) (void)) conversion_alpha_teta);
 	Timer_Base_Start(TIM1);
 }
 

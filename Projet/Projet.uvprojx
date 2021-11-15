@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>ADC_Simule</OutputName>
+          <OutputName>Projet_Simule</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -403,6 +403,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\Voile.c</FilePath>
             </File>
+            <File>
+              <FileName>Accelero.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Accelero.c</FilePath>
+            </File>
+            <File>
+              <FileName>Batterie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Batterie.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -427,6 +437,11 @@
               <FileName>Driver_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_SysTick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -481,7 +496,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>ADC_Réel</OutputName>
+          <OutputName>Projet_Réel</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -835,6 +850,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\Voile.c</FilePath>
             </File>
+            <File>
+              <FileName>Accelero.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Accelero.c</FilePath>
+            </File>
+            <File>
+              <FileName>Batterie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\Batterie.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -859,6 +884,11 @@
               <FileName>Driver_UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Source\Driver_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\Driver_SysTick.c</FilePath>
             </File>
           </Files>
         </Group>

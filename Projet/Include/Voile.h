@@ -6,7 +6,7 @@ void setup_encoder_interface(void);
 
 void init_zero(void);
 
-void conversion_alpha_teta(void);
+float conversion_alpha_teta(void);
 
 void config_interrupt_teta(void);
 
