@@ -8,7 +8,7 @@ Voici la liste des fonctionnalités prévues dans le projet.
 - [x] Bordage automatique
 - [x] Orientation du voilier
 ### Secondaires
-- [x] Système anti-chavirement
+- [ ] Système anti-chavirement
 - [x] Transmission d’informations
 - [ ] Transmission de l'heure
 
